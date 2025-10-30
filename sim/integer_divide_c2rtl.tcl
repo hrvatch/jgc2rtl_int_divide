@@ -24,5 +24,5 @@ assert -name check_remainder { integer_divide_imp.done && integer_divide_imp.val
 
 # Prove
 prove -property check_result -engine_mode { Hp }
-prove -property check_remainder -with_proven -bg -engine_mode { Hp }
+prove -property check_remainder -with_proven -engine_mode { Hp }
 prove -all -bg

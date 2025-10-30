@@ -22,3 +22,7 @@ assume { b == integer_divide_imp.b }
 assert -name check_result { integer_divide_imp.done && integer_divide_imp.valid |-> (integer_divide_imp.val == $past(val, 17)) }
 assert -name check_remainder { integer_divide_imp.done && integer_divide_imp.valid |-> (integer_divide_imp.rem == $past(rem, 17)) }
 
+# Prove
+prove -property check_result -engine_mode { Hp }
+prove -property check_remainder -with_proven -bg -engine_mode { Hp }
+prove -all -bg
